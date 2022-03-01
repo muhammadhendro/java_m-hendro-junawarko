@@ -1,4 +1,4 @@
-# (6) Collections Iterable & Map
+# (6&7) Collections Iterable & Map
 
 ## Resume
 Dalam materi ini, mempelajari:
