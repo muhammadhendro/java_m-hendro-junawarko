@@ -1,4 +1,4 @@
-# (6) Collections (Iterable)
+# (6) Collections Iterable & Map
 
 ## Resume
 Dalam materi ini, mempelajari:
@@ -9,6 +9,9 @@ Dalam materi ini, mempelajari:
 5. SortedSet
 6. Queue
 7. Deque
+8. Map
+9. Sorted Map
+10. Navigable Map
 
 
 ### Iterable
@@ -190,6 +193,88 @@ public static void main(String[] args) {
         bulan.offerLast("2");
         bulan.offerLast("3");
         System.out.println(bulan.pollLast());
+    }
+```
+### Map
+Merupakan struktur data yang dapat digunakan untuk menyimpan data dan mempunyai **key** dan **value**
+
+#### HashMap
+```
+public static void main(String[] args) {
+        Map<String, Integer> bulan = new HashMap<>();
+        bulan.put("Januari", 1);
+        bulan.put("Februari", 2);
+        bulan.put("Agustus", 8);
+        System.out.println(bulan);
+    }
+```
+
+#### WeakHashMap
+```
+public static void main(String[] args) {
+        Map<String, Integer> bulan = new WeakHashMap<>();
+        bulan.put("Januari", 1);
+        bulan.put("Februari", 2);
+        bulan.put("Agustus", 8);
+        System.gc();
+        System.out.println(bulan);
+    }
+```
+#### IdentityHashMap
+```
+public static void main(String[] args) {
+        Map<String, Integer> bulan = new IdentityHashMap<>();
+        var key = "Januari.Awal";
+        var awal = "Awal";
+        var key2 = "Januari" + "." + awal;
+        bulan.put(key, 1);
+        bulan.put(key2, 1);
+        bulan.put("Agustus", 8);
+        System.gc();
+
+        System.out.println(bulan.size());
+    }
+```
+#### LinkedHashMap
+```
+ public static void main(String[] args) {
+        Map<String, Integer> bulan = new LinkedHashMap<>();
+        bulan.put("Januari", 1);
+        bulan.put("Februari", 2);
+        bulan.put("Agustus", 8);
+        System.out.println(bulan);
+    }
+```
+#### ImmutableMap
+```
+public static void main(String[] args) {
+        Map<String, Integer> bulan = Map.of("Januari", 1, "Februari", 2);
+        System.out.println(bulan);
+    }
+```
+### Sorted Map
+Map yang dapat diurutkan secara ascending dan descending
+```
+public static void main(String[] args) {
+        SortedMap<String, Integer> bulan = new TreeMap<>();
+        bulan.put("Januari", 1);
+        bulan.put("Februari", 2);
+        bulan.put("Agustus", 8);
+        
+        System.out.println(bulan);
+    }
+```
+
+### Navigable Map
+Termasuk seperti SortedMap tapi dengan method untuk menavigasi yang lebih lengkap.
+```
+public static void main(String[] args) {
+        NavigableMap<String, Integer> bulan = new TreeMap<>();
+        bulan.put("Januari", 1);
+        bulan.put("Februari", 2);
+        bulan.put("Agustus", 8);
+
+        System.out.println(bulan.lowerKey("Februari"));
     }
 ```
 
