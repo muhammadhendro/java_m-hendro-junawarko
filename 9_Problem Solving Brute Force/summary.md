@@ -39,10 +39,10 @@ coinChange(42) // 25 10 5 1 1
 
 ## Task
 ### 1. Problem 1 - Simple Equations 
-Pada task ini, menghitung nilai dari x, y, z dengan kombinasi 
-x + y + z = A
-x * y * z = B
-x^2 + y^2 + z^2 = C
+Pada task ini, menghitung nilai dari x, y, z dengan kombinasi \
+x + y + z = A\
+x * y * z = B\
+x^2 + y^2 + z^2 = C\
 
 
 [Problem 1](./praktikum/Problem1.java)\
