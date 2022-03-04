@@ -48,7 +48,8 @@ output:\
 ![Problem 2](./screenshots/problem2.PNG)
 
 ### 3. Problem 3 - Frog
-Pada task ini, 
+Pada task ini, diberikan banyak batu dari 1 hingga ke N, untuk mencapai N kodok bisa melompat 1 atau 2.\
+dengan cost tinggi batu - tinggi mendarat, temukan total minimum tersebut
 
 
 [Problem 3](./praktikum/Problem3.java)\
