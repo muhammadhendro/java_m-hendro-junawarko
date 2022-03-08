@@ -153,7 +153,11 @@ Pada task ini,  membuat game tebak kandang dengan materi OOP yang sudah dipelaja
 
 [Challenge 5 ](./praktikum/Challenge5)\
 output:\
-![Challenge 5](./screenshots/challenge5.1.PNG)
-![Challenge 5](./screenshots/challenge5.2.PNG)
-![Challenge 5](./screenshots/challenge5.3.PNG)
-![Challenge 5](./screenshots/challenge5.4.PNG)
+menu:\
+![Challenge 5](./screenshots/challenge5.1.PNG)\
+tebakan salah:\
+![Challenge 5](./screenshots/challenge5.2.PNG)\
+tebakan benar:\
+![Challenge 5](./screenshots/challenge5.3.PNG)\
+semua benar:\
+![Challenge 5](./screenshots/challenge5.4.PNG)\
