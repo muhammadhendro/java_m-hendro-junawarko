@@ -1,67 +1,88 @@
-package praktikum.Challenge5;
+package praktikum.Challenge6;
 
 import java.util.*;
 
+import static praktikum.Challenge6.Main.*;
+
 public class Kandang {
 
+    public String type;
+    public LinkedHashMap<String, String> map = new LinkedHashMap<>();
 
-    //    public Kandang(Integer i, String j) {
-//        this.i = Collections.singletonList(i);
-//        this.nama = Collections.singletonList(j);
-//    }
-
-    public List<Integer> index = new ArrayList<>();
-    public List<String> nama = new ArrayList<>();
-
-    public void createKandang(Integer i, String j) {
-        index.add(i);
-        nama.add(j);
-
-
-//        System.out.println("| | |");
-//        System.out.println("| " + i + " |");
-//        System.out.println("| | |");
-//        System.out.println();
+    Kandang() {
 
     }
 
-    public void bukaKandang(Integer i, String j) {
-
-        System.out.println("| | |");
-        System.out.println("| " + j + " |");
-        System.out.println("| | |");
-        System.out.println();
-    }
-
-    public void bukaKandangKambing(String i) {
-        System.out.println("| | |");
-        System.out.println("| K |");
-        System.out.println("| | |");
-        System.out.println();
-    }
-
-    public void bukaKandangBebek(String i) {
-        System.out.println("| | |");
-        System.out.println("| B |");
-        System.out.println("| | |");
-        System.out.println();
-    }
-
-    public void bukaKandangZebra(String i) {
-        System.out.println("| | |");
-        System.out.println("| Z |");
-        System.out.println("| | |");
-        System.out.println();
-    }
-
-    public void generateKandang(Integer jml) {
-
+    public void createKandang(Integer jml) {
+        List<String> namaHewan = Arrays.asList("K", "B", "Z");
         for (int i = 1; i <= jml; i++) {
+            Random rand = new Random();
+            map.put(String.valueOf(i), namaHewan.get(rand.nextInt(namaHewan.size())));
+
+
+        }
+        tampilKandang();
+       
+
+    }
+
+    public void getKandang(Integer i) {
+        System.out.println("| | |");
+        System.out.println("| " + map.get(i) + " |");
+        System.out.println("| | |");
+        System.out.println();
+
+    }
+
+    public void tampilKandang() {
+        for (String m : map.keySet()) {
+
             System.out.println("| | |");
-            System.out.println("| " + i + " |");
+            System.out.println("| " + m + " |");
             System.out.println("| | |");
             System.out.println();
         }
+    }
+
+    int counter = 0;
+
+    public void setKandang(String index, String nama) {
+        System.out.println("PERCOBAAN BUKA: ");
+        for (String m : map.keySet()) {
+
+            if (index.equals(m)) {
+                System.out.println("| | |");
+                System.out.println("| " + nama + " |");
+                System.out.println("| | |");
+                System.out.println();
+            } else {
+                System.out.println("| | |");
+                System.out.println("| " + m + " |");
+                System.out.println("| | |");
+                System.out.println();
+            }
+        }
+
+        if (nama.equals(map.get(index))) {
+            System.out.println(ANSI_GREEN + "Tebakan benar !" + ANSI_RESET);
+            counter++;
+
+            map.remove(index);
+            map.put(nama, nama);
+            tampilKandang();
+            if (counter == map.size()) {
+                System.out.println(ANSI_GREEN + "Selamat, anda menebak semua kandang" + ANSI_RESET);
+                System.exit(0);
+            }
+           
+
+        } else {
+            System.out.println(ANSI_YELLOW + "Tebakan salah" + ANSI_RESET);
+            tampilKandang();
+
+        }
+
+
     }
 
 
