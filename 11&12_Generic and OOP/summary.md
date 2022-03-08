@@ -1,4 +1,4 @@
-# (11) Generic and OOP Part 1
+# (11&12) Generic and OOP Part 1 & Part2
 
 ## Resume
 Dalam materi ini, mempelajari:
@@ -117,7 +117,7 @@ class Ayla implements Vehicle {
 Pada task ini,  mendefinisikan pembuatan class dengan menggunakan konsep encapsulation, tampilkan hasil output
 
 
-[Challenge 1 ](./praktikum/challenge1/)\
+[Challenge 1 ](./praktikum/Challenge1/)\
 output:\
 ![Challenge 1](./screenshots/challenge1.PNG)
 
@@ -125,7 +125,7 @@ output:\
 Pada task ini,  membuat aplikasi calculator dengan fungsi penjumlahan, pengurangan, perkalian dan pembagian.
 
 
-[Challenge 2 ](./praktikum/challenge2)\
+[Challenge 2 ](./praktikum/Challenge2)\
 output:\
 ![Challenge 2](./screenshots/challenge2.PNG)
 
@@ -133,7 +133,7 @@ output:\
 Pada task ini,  menampilkan output dari implementasi Inheritance & Polymorphism pada contoh class Vehicles
 
 
-[Challenge 3 ](./praktikum/challenge3)\
+[Challenge 3 ](./praktikum/Challenge3)\
 output:\
 ![Challenge 3](./screenshots/challenge3.PNG)
 
@@ -142,7 +142,7 @@ output:\
 Pada task ini,  menampilkan output dari implementasi Inheritance & Polymorphism pada contoh class Animals
 
 
-[Challenge 4 ](./praktikum/challenge4)\
+[Challenge 4 ](./praktikum/Challenge4)\
 output:\
 ![Challenge 4](./screenshots/challenge4.PNG)
 
@@ -151,6 +151,6 @@ output:\
 Pada task ini,  membuat game tebak kandang dengan materi OOP yang sudah dipelajari (Encapsulation, Data Abstraction, Inheritance, Polymorphism)
 
 
-[Challenge 5 ](./praktikum/challenge5)\
+[Challenge 5 ](./praktikum/Challenge5)\
 output:\
 ![Challenge 5](./screenshots/challenge5.PNG)
