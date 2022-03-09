@@ -148,7 +148,7 @@ Create tabel kurir\
 output:\
 ![ 3](./screenshots/3.PNG)
 
-menambahkan ongkos_dasar column di tabel kurir/
+menambahkan ongkos_dasar column di tabel kurir\
 output:\
 ![ 4](./screenshots/4.PNG)
 
