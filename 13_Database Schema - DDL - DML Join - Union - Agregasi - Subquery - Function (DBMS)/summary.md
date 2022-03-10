@@ -168,10 +168,10 @@ output:\
 7. menambahkan entity baru \
 a. 1 to 1\
 output:\
-![ 7a](./screenshots/7.1.PNG)
+![ 7a](./screenshots/7.1.PNG)\
 b. 1 to many\
 output:\
-![ 7a](./screenshots/7.2.PNG)
+![ 7a](./screenshots/7.2.PNG)\
 a. many to many\
 output:\
 ![ 7a](./screenshots/7.3.PNG)
