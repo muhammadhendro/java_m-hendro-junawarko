@@ -2,3 +2,7 @@ Task 1 - Implement the Schema (Digital Outlet Pulsa)
 
 https://drive.google.com/file/d/1cotgn_oE4X0FKkKvHE5-PZOcRRL2qQ7F/view?usp=sharing
 https://app.diagrams.net/#G1cotgn_oE4X0FKkKvHE5-PZOcRRL2qQ7F
+
+
+
+

@@ -1,0 +1,93 @@
+1. Create database
+    CREATE DATABASE alta_online_shop;
+
+2.  a. Create tabel user
+
+    CREATE TABLE users(
+        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        status SMALLINT,
+        dob DATE,
+        gender CHAR(1),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+    b. Create tabel product, product_type, operators, product_description, payment_method
+
+    CREATE TABLE products(
+        id_product INT(11) NOT NULL PRIMARY KEY,
+        code VARCHAR(50),
+        name VARCHAR(100),
+        status SMALLINT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        id_product_type INT(11),
+        FOREIGN KEY (id_product_type) REFERENCES product_types(id_product_type),
+        id_operator INT(11),
+        FOREIGN KEY (id_operator) REFERENCES operators(id_operator));
+
+    CREATE TABLE product_types(
+        id_product_type INT(11) NOT NULL PRIMARY KEY,
+        name VARCHAR(255),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+    CREATE TABLE operators(
+        id_operator INT(11) NOT NULL PRIMARY KEY,
+        name VARCHAR(255),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+    CREATE TABLE product_descriptions(
+        id_product_desc INT(11) NOT NULL PRIMARY KEY,
+        description TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+    CREATE TABLE payment_methods(
+        id_payment INT(11) NOT NULL PRIMARY KEY,
+        name VARCHAR(255),
+        status SMALLINT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+    c. Create tabel transaction, transaction_detail
+
+    CREATE TABLE transactions(
+        id_transaction INT(11) NOT NULL PRIMARY KEY,
+        status VARCHAR(10),
+        total_qty INT(11),
+        total_price NUMERIC(25,2),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        id INT(11),
+        id_payment INT(11),
+        FOREIGN KEY (id) REFERENCES users(id),
+        FOREIGN KEY (id_payment) REFERENCES payment_methods(id_payment));
+
+    CREATE TABLE transaction_details(
+        status VARCHAR(10),
+        qty INT(11),
+        price NUMERIC(25,2),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        id_transaction INT(11) REFERENCES transactions(id_transaction),
+        id_product INT(11) REFERENCES products(id_product),
+        PRIMARY KEY(id_transaction, id_product));
+
+3. Create tabel kurir
+
+    CREATE TABLE kurir(
+        id INT NOT NULL PRIMARY KEY,
+        name VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); 
+
+4. menambahkan ongkos_dasar column di tabel kurir
+
+    ALTER TABLE kurir ADD COLUMN ongkos_dasar INT;
+5. rename tabel kurir menjadi shipping
+
+    ALTER TABLE kurir RENAME shipping;
+6. Hapus tabel shipping
+
+    DROP TABLE shipping;

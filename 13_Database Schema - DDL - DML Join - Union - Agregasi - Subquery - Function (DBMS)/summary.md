@@ -120,46 +120,61 @@ SELECT * FROM user LIMIT 3;
 Pada task ini, membuat schema database menggunakan draw.io 
 
 
-[Task 1 ](./praktikum/Task.txt)\
+[Task 1](./praktikum/Task.txt)\
 output:\
 ![Task 1](./screenshots/task1.PNG)
 
 ### 2. Data Definition Language 
-Pada task ini, mengimplementasikan schema tersebut menjadi tabel di MySQL menggunakan terminal.
+Pada task ini, mengimplementasikan schema tersebut menjadi tabel di MySQL menggunakan query di terminal.
 
+[ Query.txt](./praktikum/query.txt)
 
-Create Database\
+1. Create database\
 output:\
 ![ 1](./screenshots/1.PNG)
 
-Create tabel user\
+2. a. Create tabel user\
 output:\
-![ 2.a](./screenshots/2.a.PNG)
+![ 2.a](./screenshots/tabel_users.PNG)
 
-Create tabel product\
+    b. Create tabel product\
 output:\
-![ 2.b](./screenshots/2.b.PNG)
+![ 2.b](./screenshots/tabel_product.PNG)
+![ 2.b](./screenshots/tabel_product_type.PNG)
+![ 2.b](./screenshots/tabel_operator.PNG)
+![ 2.b](./screenshots/tabel_product_desc.PNG)
+![ 2.b](./screenshots/tabel_payment.PNG)
 
-Create tabel transaction\
+    c. Create tabel transaction\
 output:\
-![ 2.c](./screenshots/2.c.PNG)
-
-Create tabel kurir\
+![ 2.c](./screenshots/tabel_transaction.PNG)
+![ 2.c](./screenshots/tabel_transaction_detail.PNG)
+3. Create tabel kurir\
 output:\
 ![ 3](./screenshots/3.PNG)
 
-menambahkan ongkos_dasar column di tabel kurir\
+4. menambahkan ongkos_dasar column di tabel kurir\
 output:\
 ![ 4](./screenshots/4.PNG)
 
-rename tabel kurir menjadi shipping\
+5. rename tabel kurir menjadi shipping\
 output:\
 ![ 5](./screenshots/5.PNG)
 
-Hapus tabel shipping\
+6. Hapus tabel shipping\
 output:\
 ![ 6](./screenshots/6.PNG)
 
+7. menambahkan entity baru \
+a. 1 to 1\
+output:\
+![ 7a](./screenshots/7.1.PNG)
+b. 1 to many\
+output:\
+![ 7a](./screenshots/7.2.PNG)
+a. many to many\
+output:\
+![ 7a](./screenshots/7.3.PNG)
 
 
 
