@@ -135,20 +135,27 @@ output:\
 
 2. a. Create tabel user\
 output:\
-![ 2.a](./screenshots/tabel_users.PNG)
-
+![ 2.a](./screenshots/tabel_users.PNG)\
+![ 2.a](./screenshots/desc_user.PNG)
     b. Create tabel product\
 output:\
 ![ 2.b](./screenshots/tabel_product.PNG)
+![ 2.b](./screenshots/desc_product.PNG)
 ![ 2.b](./screenshots/tabel_product_type.PNG)
+![ 2.b](./screenshots/desc_product_type.PNG)
 ![ 2.b](./screenshots/tabel_operator.PNG)
+![ 2.b](./screenshots/desc_operator.PNG)
 ![ 2.b](./screenshots/tabel_product_desc.PNG)
+![ 2.b](./screenshots/desc_product_desc.PNG)
 ![ 2.b](./screenshots/tabel_payment.PNG)
+![ 2.b](./screenshots/desc_payment.PNG)
 
     c. Create tabel transaction\
 output:\
 ![ 2.c](./screenshots/tabel_transaction.PNG)
+![ 2.c](./screenshots/desc_transaction.PNG)
 ![ 2.c](./screenshots/tabel_transaction_detail.PNG)
+![ 2.c](./screenshots/desc_transaction_det.PNG)
 3. Create tabel kurir\
 output:\
 ![ 3](./screenshots/3.PNG)
