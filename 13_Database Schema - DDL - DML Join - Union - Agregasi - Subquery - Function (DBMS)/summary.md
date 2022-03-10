@@ -136,7 +136,7 @@ output:\
 2. a. Create tabel user\
 output:\
 ![ 2.a](./screenshots/tabel_users.PNG)\
-![ 2.a](./screenshots/desc_user.PNG)
+![ 2.a](./screenshots/desc_user.PNG)\
     b. Create tabel product\
 output:\
 ![ 2.b](./screenshots/tabel_product.PNG)
