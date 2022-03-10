@@ -140,20 +140,30 @@ output:\
     b. Create tabel product\
 output:\
 ![ 2.b](./screenshots/tabel_product.PNG)
-![ 2.b](./screenshots/desc_product.PNG)
+![ 2.b](./screenshots/desc_product.PNG)\
+Create tabel product type\
+output:\
 ![ 2.b](./screenshots/tabel_product_type.PNG)
-![ 2.b](./screenshots/desc_product_type.PNG)
+![ 2.b](./screenshots/desc_product_type.PNG)\
+Create tabel operator\
+output:\
 ![ 2.b](./screenshots/tabel_operator.PNG)
-![ 2.b](./screenshots/desc_operator.PNG)
+![ 2.b](./screenshots/desc_operator.PNG)\
+Create tabel product description\
+output:\
 ![ 2.b](./screenshots/tabel_product_desc.PNG)
-![ 2.b](./screenshots/desc_product_desc.PNG)
+![ 2.b](./screenshots/desc_product_desc.PNG)\
+Create tabel payment methods\
+output:\
 ![ 2.b](./screenshots/tabel_payment.PNG)
 ![ 2.b](./screenshots/desc_payment.PNG)
 
     c. Create tabel transaction\
 output:\
 ![ 2.c](./screenshots/tabel_transaction.PNG)
-![ 2.c](./screenshots/desc_transaction.PNG)
+![ 2.c](./screenshots/desc_transaction.PNG)\
+Create tabel transaction details\
+output:\
 ![ 2.c](./screenshots/tabel_transaction_detail.PNG)
 ![ 2.c](./screenshots/desc_transaction_det.PNG)
 3. Create tabel kurir\
