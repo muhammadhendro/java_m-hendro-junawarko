@@ -97,6 +97,7 @@ Pada task ini, menerapkan Query menggunakan INSERT, SELECT, UPDATE, dan DELETE p
 [Query.txt ](./praktikum/Query.txt)
 
 1. Insert
+
 Insert 5 operators\
 output:\
 ![1](./screenshots/1a.PNG)\
@@ -172,28 +173,28 @@ Pada task ini, menerapkan Query menggunakan Join, Union, Sub-query, Function
 
 [Query2.txt ](./praktikum/Query2.txt)
 
-1. Gabungkan data transaksi dari user id 1 dan id 2
+1. Gabungkan data transaksi dari user id 1 dan id 2\
 output:\
 ![2](./screenshots/no1.PNG)
-2. Tampilkan jumlah harga transaksi user id 1
+2. Tampilkan jumlah harga transaksi user id 1\
 output:\
 ![2](./screenshots/no2.PNG)\
-3. Tampilkan total transaksi product type 2
+3. Tampilkan total transaksi product type 2\
 output:\
 ![2](./screenshots/no3.PNG)
-4. Tampilkan semua field product dan field name product type
+4. Tampilkan semua field product dan field name product type\
 output:\
 ![2](./screenshots/no4.PNG)
-5. Tampilkan semua field transaction, field name product, field name user
+5. Tampilkan semua field transaction, field name product, field name user\
 output:\
 ![2](./screenshots/no5.PNG)
-6. Membuat function data transaksi details dihapus saat data transaksi dihapus
+6. Membuat function data transaksi details dihapus saat data transaksi dihapus\
 output:\
 ![2](./screenshots/no6.PNG)\
-7. Membuat function update total_qty saat data transaksi details dihapus
+7. Membuat function update total_qty saat data transaksi details dihapus\
 output:\
 ![2](./screenshots/no7.PNG)\
-8. Tampilkan data product yang tidak ada di transaction details dengan sub-query
+8. Tampilkan data product yang tidak ada di transaction details dengan sub-query\
 output:\
 ![2](./screenshots/no8.PNG)
 
