@@ -26,7 +26,7 @@ DECLARE v_id_transaction INT;
 SET v_id_transaction = OLD.id_transaction;
 DELETE FROM transaction_details WHERE id_transaction=v_id_transaction;
 END$$
-DELIMITER;
+DELIMITER ;
 
 7.
 DELIMITER $$
@@ -39,7 +39,7 @@ SET v_qty = OLD.qty;
 SET v_id_transaction = OLD.id_transaction;
 UPDATE transactions SET total_qty = total_qty + v_qty WHERE id_transaction=v_id_transaction;
 END$$
-DELIMITER;
+DELIMITER ;
 
 8.
 SELECT * FROM products WHERE name NOT IN(SELECT name FROM transaction_details td INNER JOIN products p ON td.id_product=p.id_product);

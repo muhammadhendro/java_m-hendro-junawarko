@@ -94,7 +94,7 @@ DELIMITER;
 Pada task ini, menerapkan Query menggunakan INSERT, SELECT, UPDATE, dan DELETE pada tugas sebelumnya\
 
 
-[Query.txt ](./praktikum/Query.txt)\
+[Query.txt ](./praktikum/Query.txt)
 
 1. Insert
 Insert 5 operators\
@@ -126,7 +126,7 @@ output:\
 ![1](./screenshots/1i.PNG)\
 Insert 3 product\
 output:\
-![1](./screenshots/1j.PNG)\
+![1](./screenshots/1j.PNG)
 
 2. Select
 
@@ -147,7 +147,7 @@ output:\
 ![2](./screenshots/2e.PNG)\
 Tampilkan 5 data product\
 output:\
-![2](./screenshots/2f.PNG)\
+![2](./screenshots/2f.PNG)
 
 3. Update
 
@@ -170,23 +170,23 @@ output:\
 ### 2. Join, Union, Sub-query, Function
 Pada task ini, menerapkan Query menggunakan Join, Union, Sub-query, Function
 
-[Query2.txt ](./praktikum/Query2.txt)\
+[Query2.txt ](./praktikum/Query2.txt)
 
 1. Gabungkan data transaksi dari user id 1 dan id 2
 output:\
-![2](./screenshots/no1.PNG)\
+![2](./screenshots/no1.PNG)
 2. Tampilkan jumlah harga transaksi user id 1
 output:\
 ![2](./screenshots/no2.PNG)\
 3. Tampilkan total transaksi product type 2
 output:\
-![2](./screenshots/no3.PNG)\
+![2](./screenshots/no3.PNG)
 4. Tampilkan semua field product dan field name product type
 output:\
-![2](./screenshots/no4.PNG)\
+![2](./screenshots/no4.PNG)
 5. Tampilkan semua field transaction, field name product, field name user
 output:\
-![2](./screenshots/no5.PNG)\
+![2](./screenshots/no5.PNG)
 6. Membuat function data transaksi details dihapus saat data transaksi dihapus
 output:\
 ![2](./screenshots/no6.PNG)\
@@ -195,6 +195,6 @@ output:\
 ![2](./screenshots/no7.PNG)\
 8. Tampilkan data product yang tidak ada di transaction details dengan sub-query
 output:\
-![2](./screenshots/no8.PNG)\
+![2](./screenshots/no8.PNG)
 
 
