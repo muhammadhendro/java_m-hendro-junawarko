@@ -99,17 +99,17 @@ output:\
 ![2](./screenshots/2a.PNG)\
 b. Tampilkan product dengan id = 3\
 output:\
-![2](./screenshots/2b.PNG)\
+![2](./screenshots/2b.PNG)
 
 c. Hitung jumlah user dengan gender perempuan\
 output:\
-![2](./screenshots/2d.PNG)\
+![2](./screenshots/2c.PNG)\
 d. Tampilkan data user sesuai abjad\
 output:\
-![2](./screenshots/2e.PNG)\
+![2](./screenshots/2d.PNG)\
 e. Tampilkan 5 data product\
 output:\
-![2](./screenshots/2f.PNG)
+![2](./screenshots/2e.PNG)
 
 3. Update
 
@@ -118,7 +118,7 @@ output:\
 ![3](./screenshots/3a.PNG)\
 b. ubah qty = 3 pada transaction_details dengan product id = 1\
 output:\
-![3](./screenshots/3b.PNG)\
+![3](./screenshots/3b.PNG)
 
 4. Delete
 
@@ -127,7 +127,7 @@ output:\
 ![4](./screenshots/4a.PNG)\
 b. Delete data tabel product dengan product type id = 1\
 output:\
-![4](./screenshots/4b.PNG)\
+![4](./screenshots/4b.PNG)
 
 
 
