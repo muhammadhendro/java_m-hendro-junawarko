@@ -1,0 +1,114 @@
+1. CREATE
+
+a.
+db.operators.insert([
+    {operator_id: 1, name: "Tri", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {operator_id: 2, name: "Telkomsel", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {operator_id: 3, name: "XL", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {operator_id: 4, name: "Indosat", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {operator_id: 5, name: "Smartfren", created_at: new Timestamp(), updated_at: new Timestamp()}
+    ])
+
+b.
+ db.product_types.insert([
+    {product_type_id: 1, name: "Pulsa", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {product_type_id: 2, name: "Kuota", created_at: new Timestamp(), updated_at: new Timestamp()},
+    {product_type_id: 3, name: "Kartu Perdana", created_at: new Timestamp(), updated_at: new Timestamp()}
+    ])
+
+c.
+db.products.insert([
+    {product_id: 1, code: "PLS10", name: "PULSA 10.000", status: 1, product_type_id: 1, operator_id: 3},
+    {product_id: 2, code: "PLS25", name: "PULSA 25.000", status: 1, product_type_id: 1, operator_id: 3}
+    ])
+
+d.
+db.products.insert([
+    {product_id: 3, code: "K1", name: "KUOTA 1GB", status: 1, product_type_id: 2, operator_id: 1},
+    {product_id: 4, code: "K2", name: "KUOTA 2GB", status: 1, product_type_id: 2, operator_id: 1},
+    {product_id: 5, code: "K5", name: "KUOTA 5GB", status: 1, product_type_id: 2, operator_id: 1}
+    ])
+
+e.
+db.products.insert([
+    {product_id: 6, code: "KPDF10", name: "Kartu Perdana Data Freedom 10GB", status: 1, product_type_id: 3, operator_id: 4},
+    {product_id: 7, code: "KPIS", name: "Kartu Perdana Indosat Standard", status: 1, product_type_id: 3, operator_id: 4},
+    {product_id: 8, code: "KPFC20", name: "Kartu Perdana Freedom Combo 20GB", status: 1, product_type_id: 3, operator_id: 4}
+    ])
+
+f.
+ db.product_descriptions.insert([
+    {product_desc_id: 1, description: "PLS 10 adalah pulsa sebesar 10 ribu"},
+    {product_desc_id: 2, description: "PLS 25 adalah pulsa sebesar 25 ribu"},
+    {product_desc_id: 3, description: "K1 adalah kuota sebesar 1GB"},
+    {product_desc_id: 4, description: "K2 adalah kuota sebesar 2GB"},
+    {product_desc_id: 5, description: "K5 adalah kuota sebesar 5GB"},
+    {product_desc_id: 6, description: "KPDF10 adalah kartu perdana sebesar kuota 10GB"},
+    {product_desc_id: 7, description: "KPIS adalah kartu perdana biasa"},
+    {product_desc_id: 8, description: "KPFC20 adalah kartu perdana + kuota 20GB"}
+    ])
+
+g.
+db.payment_methods.insert([
+    {payment_id: 1, name: "Bank BRI", status: 1},
+    {payment_id: 2, name: "Gopay", status: 1},
+    {payment_id: 3, name: "Dana", status: 1}
+])
+
+h.
+db.users.insert([
+    {user_id: 1, name: "rara", status: 1, dob: new Date("2000-10-20"), gender: "F"},
+    {user_id: 2, name: "irda", status: 1, dob: new Date("1999-05-26"), gender: "M"},
+    {user_id: 3, name: "natan", status: 1, dob: new Date("1999-01-01"), gender: "M"},
+    {user_id: 4, name: "wahyu", status: 1, dob: new Date("1999-02-02"), gender: "M"},
+    {user_id: 5, name: "alvin", status: 1, dob: new Date("2000-12-12"), gender: "M"}
+    ])
+
+i.
+db.transactions.insert([
+    {transaction_id: 1, status: 1, total_qty: 2, total_price: 20000, user_id: 1, payment_id: 2},
+    {transaction_id: 2, status: 1, total_qty: 5, total_price: 50000, user_id: 2, payment_id: 3},
+    {transaction_id: 3, status: 1, total_qty: 1, total_price: 25000, user_id: 5, payment_id: 1}
+    ])
+
+j.
+db.transaction_details.insert([
+    {transaction_id: 1, status: 1, qty: 2, price: 20000, product_id: 1},
+     {transaction_id: 2, status: 1, qty: 5, price: 50000, product_id: 3},
+     {transaction_id: 3, status: 1, qty: 1, price: 25000, product_id: 8}
+    ])
+
+2. READ
+
+a.
+db.users.find({gender: "M"});
+
+b.
+db.products.find({product_id: 3})
+
+c.
+db.users.find({gender: "F"}).count()
+
+d.
+db.users.find().sort({name: 1})
+
+e.
+db.products.find().limit(5)
+
+3. UPDATE
+
+a.
+db.products.update({product_id: 1}, { $set: {name: "product dummy" } })
+
+b.
+db.transaction_details.update({product_id: 1}, { $set: {qty: 3 } })
+
+4. DELETE
+
+a.
+db.products.remove({product_id: 1})
+
+b.
+db.products.remove({product_type_id: 1})
+
+
