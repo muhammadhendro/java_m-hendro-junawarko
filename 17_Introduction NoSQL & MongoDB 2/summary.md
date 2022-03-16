@@ -315,7 +315,7 @@ output:\
 6. Tampilkan data author, books dan publisher sesuai output
 
 ```
-db.authors.aggregate([{ $lookup: { from: "books", localField: "_id", foreignField: "authorID", as: "buku" } }, {   $unwind:"$buku"}, {$group: {_id: {$concat: ["$firstName", " ","$lastName"]}, number_of_books: {$count: {}}, list_of_books: {$count: {}} } }])
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "author" } }, {   $unwind:"$author"},{$lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher" } },{$unwind: "$publisher"}, {$group: {"_id": {$concat: ["$author.firstName", " ","$author.lastName"]}, "number_of_books": {$count: {}}, "list_of_books": {$count: {}} } }])
 ```
 
 output:\
@@ -335,7 +335,7 @@ output:\
 8. Tampilkan semua nama buku, harga, author dan publisher dari harga termahal
 
 ```
-db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }, {$project: {"title": 1, "price": 1, "authors.firstName": 1, "publishers.publisherName": 1 }},{$sort: {price: -1}}])
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "author" } },{$unwind: "$author"}, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind: "$publisher"}, {$project: {"title": 1, "price": 1, "author": {$concat: ["$author.firstName", " ","$author.lastName"]}, "publisher": "$publisher.publisherName" }},{$sort: {price: -1}}])
 ```
 
 output:\
