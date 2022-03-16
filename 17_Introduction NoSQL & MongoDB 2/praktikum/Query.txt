@@ -32,3 +32,16 @@ db.books.aggregate([{
 db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }])
 
 6. 
+db.authors.aggregate([{ $lookup: { from: "books", localField: "_id", foreignField: "authorID", as: "buku" } }, {   $unwind:"$buku"}, {$group: {_id: {$concat: ["$firstName", " ","$lastName"]}, number_of_books: {$count: {}}, list_of_books: {$count: {}} } }])
+
+7.
+ db.books.find({}, {_id: 1, title: 1, price: 1, Promo: {$cond: {if : {$gte: ["$price", 90000]}, then: "3%",if : {$gte: ["$price", 60000]}, then: "2%", else: "1%" }}})
+
+ 8.
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }, {$project: {"title": 1, "price": 1, "authors.firstName": 1, "publishers.publisherName": 1 }},{$sort: {price: -1}}])
+
+9.
+db.books.aggregate([{ $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind : "$publisher"}, {$project: {"_id": 1, "title": 1, "price": 1, "publisher": "$publisher.publisherName" }}, {$match : {_id: {$in: [3,4]}}}])
+
+
+

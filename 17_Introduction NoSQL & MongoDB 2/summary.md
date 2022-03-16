@@ -243,27 +243,61 @@ db.mentees.aggregate([{
 ### 1. Problem 2: Aggregation MongoDB 
 Pada task ini, mengimplementasikan agregasi di MongoDB
 
-[Query.txt ](./praktikum/Query.txt)\
+[Query.txt ](./praktikum/Query.txt)
 
 1. Tampilkan data buku author id 1 dan 2
+
+```
+db.books.find({authorID: { $in: [1,2]}})
+```
 
 output:\
 ![Problem](./screenshots/1.PNG)
 
 2. Tampilkan daftar buku dan harga author id 1
 
+```
+db.books.find({authorID: 1}, {_id: 1, title: 1, price: 1})
+```
+
 output:\
 ![Problem ](./screenshots/2.PNG)
 
 3. Tampilkan total jumlah halaman buku auhtor id 2
+
+```
+db.books.aggregate([{$match: {authorID: 2}}, { $group: {_id: 2, totalPages: {$sum: "$stats.page"}}}])
+```
 
 output:\
 ![Problem ](./screenshots/3.PNG)
 
 4. Tampilkan semua field books dan author
 
+```
+db.authors.aggregate([{
+    $lookup: {
+    from: "books",
+    localField: "_id",
+    foreignField: "authorID",
+    as: "books"
+    }
+    }])
+```
+
 output 1:\
 ![Problem](./screenshots/4a.PNG)
+
+```
+db.books.aggregate([{
+    $lookup: {
+    from: "authors",
+    localField: "authorID",
+    foreignField: "_id",
+    as: "authors"
+    }
+    }])
+```
 
 output 2:\
 ![Problem](./screenshots/4b.PNG)
@@ -271,32 +305,52 @@ output 2:\
 
 5. Tampilkan semua field books author dan publisher 
 
+```
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }])
+```
+
 output:\
 ![Problem](./screenshots/5.PNG)
 
 6. Tampilkan data author, books dan publisher sesuai output
 
+```
+db.authors.aggregate([{ $lookup: { from: "books", localField: "_id", foreignField: "authorID", as: "buku" } }, {   $unwind:"$buku"}, {$group: {_id: {$concat: ["$firstName", " ","$lastName"]}, number_of_books: {$count: {}}, list_of_books: {$count: {}} } }])
+```
+
 output:\
-![Problem](./screenshots/.PNG)
+![Problem](./screenshots/6.PNG)
 
 
 7. Tampilkan harga buku dengan diskon
 
+```
+db.books.find({}, {_id: 1, title: 1, price: 1, Promo: {$cond: {if : {$gte: ["$price", 90000]}, then: "3%",if : {$gte: ["$price", 60000]}, then: "2%", else: "1%" }}})
+```
+
 output:\
-![Problem](./screenshots/.PNG)
+![Problem](./screenshots/7.PNG)
 
 
 8. Tampilkan semua nama buku, harga, author dan publisher dari harga termahal
 
+```
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }, {$project: {"title": 1, "price": 1, "authors.firstName": 1, "publishers.publisherName": 1 }},{$sort: {price: -1}}])
+```
+
 output:\
-![Problem](./screenshots/.PNG)
+![Problem](./screenshots/8.PNG)
 
 
 9. Tampilkan nama buku, harga, dan publisher hanya data 3 dan 4
 
-output:\
-![Problem](./screenshots/.PNG)
+```
+db.books.aggregate([{ $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind : "$publisher"}, {$project: {"_id": 1, "title": 1, "price": 1, "publisher": "$publisher.publisherName" }}, {$match : {_id: {$in: [3,4]}}}])
+```
 
+output:\
+![Problem](./screenshots/9a.PNG)
+![Problem](./screenshots/9b.PNG)
 
 
 
