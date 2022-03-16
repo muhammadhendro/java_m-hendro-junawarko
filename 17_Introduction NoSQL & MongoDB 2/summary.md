@@ -248,54 +248,54 @@ Pada task ini, mengimplementasikan agregasi di MongoDB
 1. Tampilkan data buku author id 1 dan 2
 
 output:\
-![Problem](./screenshots/task1.PNG)
+![Problem](./screenshots/1.PNG)
 
 2. Tampilkan daftar buku dan harga author id 1
 
 output:\
-![Problem ](./screenshots/task2.PNG)
+![Problem ](./screenshots/2.PNG)
 
 3. Tampilkan total jumlah halaman buku auhtor id 2
 
 output:\
-![Problem ](./screenshots/task3.PNG)
+![Problem ](./screenshots/3.PNG)
 
 4. Tampilkan semua field books dan author
 
 output 1:\
-![Problem](./screenshots/task4a.PNG)
+![Problem](./screenshots/4a.PNG)
 
 output 2:\
-![Problem](./screenshots/task4b.PNG)
+![Problem](./screenshots/4b.PNG)
 
 
 5. Tampilkan semua field books author dan publisher 
 
 output:\
-![Problem](./screenshots/task5.PNG)
+![Problem](./screenshots/5.PNG)
 
 6. Tampilkan data author, books dan publisher sesuai output
 
 output:\
-![Problem](./screenshots/task.PNG)
+![Problem](./screenshots/.PNG)
 
 
 7. Tampilkan harga buku dengan diskon
 
 output:\
-![Problem](./screenshots/task.PNG)
+![Problem](./screenshots/.PNG)
 
 
 8. Tampilkan semua nama buku, harga, author dan publisher dari harga termahal
 
 output:\
-![Problem](./screenshots/task.PNG)
+![Problem](./screenshots/.PNG)
 
 
 9. Tampilkan nama buku, harga, dan publisher hanya data 3 dan 4
 
 output:\
-![Problem](./screenshots/task.PNG)
+![Problem](./screenshots/.PNG)
 
 
 
