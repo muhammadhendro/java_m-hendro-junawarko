@@ -1,0 +1,34 @@
+1.
+ db.books.find({authorID: { $in: [1,2]}})
+
+2.
+db.books.find({authorID: 1}, {_id: 1, title: 1, price: 1})
+
+3.
+db.books.aggregate([{$match: {authorID: 2}}, { $group: {_id: 2, totalPages: {$sum: "$stats.page"}}}])
+
+4.
+output 1:
+db.authors.aggregate([{
+    $lookup: {
+    from: "books",
+    localField: "_id",
+    foreignField: "authorID",
+    as: "books"
+    }
+    }])
+
+output 2:
+db.books.aggregate([{
+    $lookup: {
+    from: "authors",
+    localField: "authorID",
+    foreignField: "_id",
+    as: "authors"
+    }
+    }])
+
+5.
+db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }])
+
+6. 
