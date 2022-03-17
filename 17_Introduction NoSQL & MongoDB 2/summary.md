@@ -247,8 +247,8 @@ Pada task ini, mengimplementasikan agregasi di MongoDB
 
 1. Tampilkan data buku author id 1 dan 2
 
-```
-db.books.find({authorID: { $in: [1,2]}})
+```js
+db.books.find({ authorID: { $in: [1, 2] } });
 ```
 
 output:\
@@ -256,8 +256,8 @@ output:\
 
 2. Tampilkan daftar buku dan harga author id 1
 
-```
-db.books.find({authorID: 1}, {_id: 1, title: 1, price: 1})
+```js
+db.books.find({ authorID: 1 }, { _id: 1, title: 1, price: 1 });
 ```
 
 output:\
@@ -265,8 +265,11 @@ output:\
 
 3. Tampilkan total jumlah halaman buku auhtor id 2
 
-```
-db.books.aggregate([{$match: {authorID: 2}}, { $group: {_id: 2, totalPages: {$sum: "$stats.page"}}}])
+```js
+db.books.aggregate([
+  { $match: { authorID: 2 } },
+  { $group: { _id: 2, totalPages: { $sum: "$stats.page" } } },
+]);
 ```
 
 output:\
@@ -274,29 +277,33 @@ output:\
 
 4. Tampilkan semua field books dan author
 
-```
-db.authors.aggregate([{
+```js
+db.authors.aggregate([
+  {
     $lookup: {
-    from: "books",
-    localField: "_id",
-    foreignField: "authorID",
-    as: "books"
-    }
-    }])
+      from: "books",
+      localField: "_id",
+      foreignField: "authorID",
+      as: "books",
+    },
+  },
+]);
 ```
 
 output 1:\
 ![Problem](./screenshots/4a.PNG)
 
-```
-db.books.aggregate([{
+```js
+db.books.aggregate([
+  {
     $lookup: {
-    from: "authors",
-    localField: "authorID",
-    foreignField: "_id",
-    as: "authors"
-    }
-    }])
+      from: "authors",
+      localField: "authorID",
+      foreignField: "_id",
+      as: "authors",
+    },
+  },
+]);
 ```
 
 output 2:\
@@ -305,8 +312,25 @@ output 2:\
 
 5. Tampilkan semua field books author dan publisher 
 
-```
-db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "authors" } }, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publishers"} }])
+```js
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "authors",
+      localField: "authorID",
+      foreignField: "_id",
+      as: "authors",
+    },
+  },
+  {
+    $lookup: {
+      from: "publishers",
+      localField: "publisherID",
+      foreignField: "_id",
+      as: "publishers",
+    },
+  },
+]);
 ```
 
 output:\
@@ -314,8 +338,34 @@ output:\
 
 6. Tampilkan data author, books dan publisher sesuai output
 
-```
-db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "author" } }, {   $unwind:"$author"},{$lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher" } },{$unwind: "$publisher"}, {$group: {"_id": {$concat: ["$author.firstName", " ","$author.lastName"]}, "number_of_books": {$count: {}}, "list_of_books": {$count: {}} } }])
+```js
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "authors",
+      localField: "authorID",
+      foreignField: "_id",
+      as: "author",
+    },
+  },
+  { $unwind: "$author" },
+  {
+    $lookup: {
+      from: "publishers",
+      localField: "publisherID",
+      foreignField: "_id",
+      as: "publisher",
+    },
+  },
+  { $unwind: "$publisher" },
+  {
+    $group: {
+      _id: { $concat: ["$author.firstName", " ", "$author.lastName"] },
+      number_of_books: { $count: {} },
+      list_of_books: { $count: {} },
+    },
+  },
+]);
 ```
 
 output:\
@@ -324,8 +374,24 @@ output:\
 
 7. Tampilkan harga buku dengan diskon
 
-```
-db.books.find({}, {_id: 1, title: 1, price: 1, Promo: {$cond: {if : {$gte: ["$price", 90000]}, then: "3%",if : {$gte: ["$price", 60000]}, then: "2%", else: "1%" }}})
+```js
+db.books.find(
+  {},
+  {
+    _id: 1,
+    title: 1,
+    price: 1,
+    Promo: {
+      $cond: {
+        if: { $gte: ["$price", 90000] },
+        then: "3%",
+        if: { $gte: ["$price", 60000] },
+        then: "2%",
+        else: "1%",
+      },
+    },
+  }
+);
 ```
 
 output:\
@@ -335,7 +401,35 @@ output:\
 8. Tampilkan semua nama buku, harga, author dan publisher dari harga termahal
 
 ```js
-db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "author" } },{$unwind: "$author"}, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind: "$publisher"}, {$project: {"title": 1, "price": 1, "author": {$concat: ["$author.firstName", " ","$author.lastName"]}, "publisher": "$publisher.publisherName" }},{$sort: {price: -1}}])
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "authors",
+      localField: "authorID",
+      foreignField: "_id",
+      as: "author",
+    },
+  },
+  { $unwind: "$author" },
+  {
+    $lookup: {
+      from: "publishers",
+      localField: "publisherID",
+      foreignField: "_id",
+      as: "publisher",
+    },
+  },
+  { $unwind: "$publisher" },
+  {
+    $project: {
+      title: 1,
+      price: 1,
+      author: { $concat: ["$author.firstName", " ", "$author.lastName"] },
+      publisher: "$publisher.publisherName",
+    },
+  },
+  { $sort: { price: -1 } },
+]);
 ```
 
 output:\
@@ -365,7 +459,6 @@ db.books.aggregate([
   },
   { $match: { _id: { $in: [3, 4] } } },
 ]);
-
 ```
 
 output:\
