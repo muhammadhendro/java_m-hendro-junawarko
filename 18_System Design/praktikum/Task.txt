@@ -1,0 +1,18 @@
+Problem 1 - Diagram
+1. Buatlah design ERD
+
+https://dbdiagram.io/d/6232d6aa0ac038740c4c711c
+
+2. Gambarkan Use case diagram
+https://app.creately.com/d/KtSZGs2aPhP/edit
+
+
+Problem 2 - Query (Optional - Nilai Tambah)
+
+1. 
+HGETALL users
+2.
+MATCH (u:users)
+RETURN u;
+3.
+select * from users;
