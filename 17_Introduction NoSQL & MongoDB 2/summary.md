@@ -334,7 +334,7 @@ output:\
 
 8. Tampilkan semua nama buku, harga, author dan publisher dari harga termahal
 
-```
+```js
 db.books.aggregate([{ $lookup: { from: "authors", localField: "authorID", foreignField: "_id", as: "author" } },{$unwind: "$author"}, { $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind: "$publisher"}, {$project: {"title": 1, "price": 1, "author": {$concat: ["$author.firstName", " ","$author.lastName"]}, "publisher": "$publisher.publisherName" }},{$sort: {price: -1}}])
 ```
 
@@ -344,8 +344,28 @@ output:\
 
 9. Tampilkan nama buku, harga, dan publisher hanya data 3 dan 4
 
-```
-db.books.aggregate([{ $lookup: { from: "publishers", localField: "publisherID", foreignField: "_id", as: "publisher"} },{$unwind : "$publisher"}, {$project: {"_id": 1, "title": 1, "price": 1, "publisher": "$publisher.publisherName" }}, {$match : {_id: {$in: [3,4]}}}])
+```js
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "publishers",
+      localField: "publisherID",
+      foreignField: "_id",
+      as: "publisher",
+    },
+  },
+  { $unwind: "$publisher" },
+  {
+    $project: {
+      _id: 1,
+      title: 1,
+      price: 1,
+      publisher: "$publisher.publisherName",
+    },
+  },
+  { $match: { _id: { $in: [3, 4] } } },
+]);
+
 ```
 
 output:\
