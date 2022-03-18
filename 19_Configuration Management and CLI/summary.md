@@ -121,7 +121,7 @@ output:
 ### 2. Problem 2 - Create Automation Script 
 Pada task ini, membuat otomasi script menghasilkan sesuai output
 
-[ScriptAutomate.sh ](./screenshots/script.sh)
+[ScriptAutomate.sh ](./praktikum/script.sh)
 
 ```
 #! /bin/bash
