@@ -111,15 +111,17 @@ $ nano ~/.zshrc
 
 ![3](./screenshots/3.PNG)
 
-Finish Install
-output:\
+Done Install
+
+output:
+
 ![1](./screenshots/1.PNG)
 
 
 ### 2. Problem 2 - Create Automation Script 
 Pada task ini, membuat otomasi script menghasilkan sesuai output
 
-[Script Automate ](./screenshots/script.sh)\
+[ScriptAutomate.sh ](./screenshots/script.sh)
 
 ```
 #! /bin/bash
