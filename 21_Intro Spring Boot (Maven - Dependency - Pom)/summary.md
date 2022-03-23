@@ -41,7 +41,7 @@ c. DELETE /v1/messages
 [Praktikum](./praktikum/Alterra)
 
 output:
-
+![Problem 1](./screenshots/spring.PNG)
 ![Problem 1](./screenshots/1.PNG)
 ![Problem 1](./screenshots/2.PNG)
 ![Problem 1](./screenshots/3.PNG)
