@@ -93,10 +93,10 @@ Hibernate adalah implementasi standar dari spesifikasi JPA
 
 #### JPA Dependencies
 ```
-        <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
 ```
 
 #### Spring JPA and Datasource Properties
@@ -116,7 +116,7 @@ a. GET /v1/posts\
 b. POST /v1/posts\
 c. DELETE /v1/posts/{id}
 
-[Praktikum](./praktikum/Alterra)
+[Praktikum](./praktikum/alterra)
 
 output:
 
@@ -128,14 +128,14 @@ output:
 ### 2. Problem 2 - Repository
 Pada task ini, menggunakan CrudRepository dan JpaRepository dan perbedaan
 
-Pada CrudRepository mempunyai fungsi crud seperti save, findall, delete dll. mempunyai semua basic query yang dibutuhkan
+Pada CrudRepository mempunyai fungsi crud seperti save, findall, delete dll. mempunyai semua basic query yang dibutuhkan\
 Pada JpaRepository mempunyai method yang sama dengan CrudRepository dan mempunyai method yang lebih lengkap
 
 
-output CrudRepository:
+output CrudRepository:\
 ![Problem 1](./screenshots/crudrepo.PNG)
 
-output JpaRepository:
+output JpaRepository:\
 ![Problem 1](./screenshots/jparepo.PNG)
 
 
