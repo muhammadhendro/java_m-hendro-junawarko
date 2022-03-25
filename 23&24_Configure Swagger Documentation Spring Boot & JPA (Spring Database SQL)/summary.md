@@ -85,7 +85,7 @@ output Response API:
 
 ![Problem 1](./screenshots/2.PNG)
 
-output CRUD transactionDao and controller:
+output CRUD productDao and controller:
 
 ![Problem 1](./screenshots/3.PNG)
 ![Problem 1](./screenshots/4.PNG)

@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger.readers.operation.SwaggerOperationTagsReader;
 
 import java.awt.*;
 
@@ -29,6 +30,20 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    @PostMapping(value = "")
+    public ResponseEntity<Object> saveProduct(@RequestBody ProductDto request) {
+        return productService.saveProduct(request);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Object> deleteById(@PathVariable Long id) {
+        return productService.deleteProduct(id);
+    }
+
+    @PutMapping(value= "/{id}")
+    public ResponseEntity<Object> updateById(@PathVariable Long id, @RequestBody ProductDto request) {
+        return productService.updateProductById(id, request);
+    }
 
 
 
