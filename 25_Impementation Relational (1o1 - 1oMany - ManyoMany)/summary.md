@@ -108,19 +108,41 @@ output:
 
 ### 2. Challenge 2
 Pada task ini, membuat query dengan JPA berikut:
-1. Get all products with category\
-2. Paginate products\
-3. Sort products by category\
-4. Search products by name
 
 [Praktikum](./praktikum/alterra)
+
+1. Get all products with category
 
 output:
 
 ![query](./screenshots/1.PNG)
+
+2. Paginate products
+
+output:
+
 ![query](./screenshots/2.PNG)
+
+3. Sort products by category
+
+output:
+
 ![query](./screenshots/3.PNG)
+
+4. Search products by name
+
+output:
+
 ![query](./screenshots/4.PNG)
+
+
+
+
+
+
+
+
+
 
 
 
