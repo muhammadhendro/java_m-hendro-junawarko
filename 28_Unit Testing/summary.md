@@ -87,7 +87,7 @@ use @InjectMocks in class that use Autowired objects
 ### 1. Problem - Business Logic Layer Testing
 Pada task ini, mengimplementasikan unit test pada bagian service minimum 3 test case.
 
-[Praktikum](./praktikum/)
+[Praktikum](./praktikum/alterra)
 
 output:
 
