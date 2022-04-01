@@ -92,6 +92,9 @@ Pada task ini, mengimplementasikan unit test pada bagian service minimum 3 test 
 output:
 
 ![Problem 1](./screenshots/1.PNG)
+![Problem 1](./screenshots/a.PNG)
+![Problem 1](./screenshots/2.PNG)
+![Problem 1](./screenshots/3.PNG)
 
 
 
