@@ -138,12 +138,13 @@ public void whenValidName_thenEmployeeShouldBeFound() {
 ### 1. Challenge 1
 Pada task ini, mengimplementasikan integration test dan unit test nya.
 
-[Praktikum](./praktikum/)
+[Praktikum](./praktikum/alterra)
 
 output:
 
 ![Problem 1](./screenshots/1.PNG)
-
+![Problem 1](./screenshots/2.PNG)
+![Problem 1](./screenshots/3.PNG)
 
 
 
