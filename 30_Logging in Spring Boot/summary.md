@@ -122,7 +122,7 @@ public class LoggingController {
 ### 1. Challenge 1
 Pada task ini, mengimplementasikan logging output pada aplikasi CRUD
 
-[Praktikum](./praktikum/alterra_unit-test)
+[Praktikum](./praktikum/alterra)
 
 output:
 
