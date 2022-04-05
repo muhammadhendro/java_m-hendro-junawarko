@@ -66,7 +66,7 @@ actuator output:
 
 health output:
 
-![Problem 1](./screenshots/1.PNG)
+![Problem 1](./screenshots/2.PNG)
 
 
 
