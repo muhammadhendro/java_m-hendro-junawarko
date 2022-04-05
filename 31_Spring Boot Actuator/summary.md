@@ -55,9 +55,9 @@ management.endpoints.web.exposure.include=*
 
 ## Task
 ### 1. Problem 1
-Pada task ini, mengimplementasikan
+Pada task ini, mengimplementasikan actuator pada spring boot untuk monitoring aplikasi.
 
-[Praktikum](./praktikum/alterra_unit-test)
+[Praktikum](./praktikum/alterra_actuator)
 
 
 actuator output:

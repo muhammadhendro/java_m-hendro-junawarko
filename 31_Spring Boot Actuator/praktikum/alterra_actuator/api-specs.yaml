@@ -1,0 +1,484 @@
+openapi: 3.0.0
+info:
+  title: Spring Boot Relationship
+  description: API documentation for spring boot relationship
+  version: 1.0.0-SNAPSHOT
+servers:
+  - url: http://localhost:8080/api/
+    description: Development
+paths:
+  /v1/brand:
+    post:
+      summary: Add new brand
+      tags:
+        - Brand
+      requestBody:
+        description: Request body add new brand
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+            examples:
+              success:
+                summary: Success
+                value:
+                  brand_name: New Brand
+      responses:
+        '200':
+          description: Success add new brand
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      id: 1
+                      brand_name: New Brand
+        '500':
+          description: Uknown error when add new brand
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+  /v1/category:
+    post:
+      summary: Add new category
+      tags:
+        - Category
+      requestBody:
+        description: Request body add new category
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+            examples:
+              success:
+                summary: Success
+                value:
+                  category_name: New Category
+      responses:
+        '200':
+          description: Success add new category
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      id: 1
+                      category_name: New Category
+        '500':
+          description: Unknown error when add new category
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+  /v1/product:
+    post:
+      summary: Add new product
+      tags:
+        - Product
+      requestBody:
+        description: Request body add new product
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+            examples:
+              success:
+                summary: Success
+                value:
+                  product_name: New Product
+                  brand:
+                    id: 1
+                  category:
+                    id: 1
+                  model_year: '2022'
+                  price: 250000
+      responses:
+        '200':
+          description: Success add new product
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      id: 1
+                      product_name: New Product
+                      brand:
+                        id: 1
+                        brand_name: New Brand
+                      category:
+                        id: 1
+                        category_name: New Category
+                      model_year: '2022'
+                      price: 250000
+        '400':
+          description: Error bad request when add new product
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                bad_request:
+                  summary: Bad Request
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: DATA_NOT_FOUND
+                      message: Data not found!
+                    data: null
+        '500':
+          description: Unknown Error when add new product
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+    get:
+      summary: Get all product
+      tags:
+        - Product
+      responses:
+        '200':
+          description: Success get all product
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      - id: 1
+                        product_name: New Product
+                        brand:
+                          id: 1
+                          brand_name: New Brand
+                        category:
+                          id: 1
+                          category_name: New Category
+                        model_year: '2022'
+                        price: 250000
+                      - id: 2
+                        product_name: New Product 2
+                        brand:
+                          id: 1
+                          brand_name: New Brand
+                        category:
+                          id: 1
+                          category_name: New Category
+                        model_year: '2022'
+                        price: 260000
+        '500':
+          description: Unknown error when get all product
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+  /v1/product/pagination:
+    post:
+      summary: Get all product with pagination
+      tags:
+        - Product
+      requestBody:
+        description: Request body get all product with pagination
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductListPagination'
+            examples:
+              success:
+                summary: Success
+                value:
+                  page: 0
+                  size: 1
+      responses:
+        '200':
+          description: Success get all product with pagination
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      products:
+                        - id: 1
+                          product_name: New Product
+                          brand:
+                            id: 1
+                            brand_name: New Brand
+                          category:
+                            id: 1
+                            category_name: New Category
+                          model_year: '2022'
+                          price: 250000
+                      size: 1
+                      page: 0
+                      total_page: 5
+        '500':
+          description: Unknown error when add new product with pagination
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+  /v1/product/sort-by-category:
+    get:
+      summary: Get all product sort by category
+      tags:
+        - Product
+      parameters:
+        - in: query
+          name: sort
+          required: true
+          schema:
+            type: string
+            enum: [ASC, DESC]  
+      responses:
+        '200':
+          description: Success get all product sort by category
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      - id: 1
+                        product_name: New Product
+                        brand:
+                          id: 1
+                          brand_name: New Brand
+                        category:
+                          id: 1
+                          category_name: New Category
+                        model_year: '2022'
+                        price: 250000
+                      - id: 2
+                        product_name: New Product 2
+                        brand:
+                          id: 1
+                          brand_name: New Brand
+                        category:
+                          id: 1
+                          category_name: New Category
+                        model_year: '2022'
+                        price: 260000
+        '500':
+          description: Unknown error when get all product sort by category
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+  /v1/product/search:
+    get:
+      summary: Search product by product name
+      tags:
+        - Product
+      parameters:
+        - in: query
+          name: product_name
+          required: true
+          schema:
+            type: string
+            example: New Product
+      responses:
+        '200':
+          description: Success search product by product name
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                success:
+                  summary: Success
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: SUCCESS
+                      message: Success!
+                    data:
+                      id: 1
+                      product_name: New Product
+                      brand:
+                        id: 1
+                        brand_name: New Brand
+                      category:
+                        id: 1
+                        category_name: New Category
+                      model_year: '2022'
+                      price: 250000
+        '500':
+          description: Uknown error when search product by product name
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                unknown_error:
+                  summary: Unknown Error
+                  value:
+                    timestamp: '26-03-2022 14:00:10'
+                    status:
+                      code: UNKNOWN_ERROR
+                      message: Happened unknown error!
+                    data: null
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          pattern: dd-MM-yyyy HH:mm:ss
+        status:
+          $ref: '#/components/schemas/ApiResponseStatus'
+        data:
+          type: object
+          description: Generic type can be object or list
+    ApiResponseStatus:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+    Brand:
+      type: object
+      properties:
+        id:
+          type: integer
+        brand_name:
+          type: string
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        category_name:
+          type: string
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        product_name:
+          type: string
+        brand:
+          $ref: '#/components/schemas/Brand'
+        category:
+          $ref: '#/components/schemas/Category'
+        model_year:
+          type: string
+        price:
+          type: integer
+    ProductListPagination:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        size:
+          type: integer
+        page:
+          type: integer
+        total_pages:
+          type: integer
