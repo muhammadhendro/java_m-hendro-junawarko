@@ -1,0 +1,43 @@
+query getAllPost	{
+ getAllPost {
+    id
+    title
+    text
+    category	
+ }  
+}
+
+query getAllAuthor {
+ getAllAuthor {
+    id
+    name
+    thumbnail
+ }  
+}
+
+mutation addAuthor($authorInput: AuthorForm!) {
+  addAuthor(input:$authorInput) {
+    id
+    name
+    thumbnail
+  }
+}
+
+mutation writePost($postInput: PostForm!) {
+  writePost(input:$postInput) {
+    id
+    title
+    text
+    category
+  }
+}
+
+mutation writePostParam {
+  writePostParam( title: "java", text: "spring", category: "boot", author: 1){
+    id
+    title
+    text
+    category
+  }
+}
+
