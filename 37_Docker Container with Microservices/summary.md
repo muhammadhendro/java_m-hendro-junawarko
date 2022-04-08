@@ -16,15 +16,15 @@ Docker adalah platform perangkat lunak yang memungkinkan Anda membuat, menguji, 
 - Scalability
 
 ### Docker Concepts
-• Dockerfile
-• Docker Images
-• Docker Container
-• Docker Hub
-• Docker Daemon
-• Docker Engine
-• Docker Registry
-• Docker Compose
-• Docker Swarm
+- Dockerfile
+- Docker Images
+- Docker Container
+- Docker Hub
+- Docker Daemon
+- Docker Engine
+- Docker Registry
+- Docker Compose
+- Docker Swarm
 
 ### Docker Command
 ![command](./screenshots/dockercheatsheet.png)
