@@ -1,4 +1,4 @@
-# (38) Compute Service
+# (38&39) Compute Service & CI/CD with Microservices
 
 ## Resume
 Dalam materi ini, mempelajari:
@@ -96,6 +96,7 @@ Pada task ini, mendeploy spring boot project ke AWS
 
 output:
 
+![Problem 1](./screenshots/1.PNG)
 ![Problem 1](./screenshots/1.PNG)
 
 
