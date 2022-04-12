@@ -89,15 +89,16 @@ jobs:
 
 
 ## Task
-### 1. Problem 1
+### 1. Challenge 1
 Pada task ini, mendeploy spring boot project ke AWS
 
-[Praktikum](./praktikum/alterra)
+[Praktikum](./praktikum/springboot-helloworld-main)
 
 output:
 
-![Problem 1](./screenshots/1.PNG)
-![Problem 1](./screenshots/1.PNG)
+![Challenge 1](./screenshots/1.PNG)
+
+![Challenge 1](./screenshots/2.PNG)
 
 
 
