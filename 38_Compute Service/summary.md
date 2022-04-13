@@ -1,4 +1,4 @@
-# (38&39) Compute Service & CI/CD with Microservices
+# (38) Compute Service 
 
 ## Resume
 Dalam materi ini, mempelajari:
