@@ -92,7 +92,7 @@ jobs:
 ### 1. Challenge 1
 Pada task ini, mendeploy spring boot project ke AWS dengan github action
 
-[Praktikum](./praktikum/springboot)
+[Praktikum](./praktikum/alterra)
 
 workflows.yml
 ```yml

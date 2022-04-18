@@ -92,7 +92,7 @@ jobs:
 ### 1. Challenge 1
 Pada task ini, mendeploy spring boot project ke AWS
 
-[Praktikum](https://github.com/muhammadhendro/springboot-postgres-docker)
+[Praktikum](./praktikum/springboot-helloworld-main)
 
 output:
 
