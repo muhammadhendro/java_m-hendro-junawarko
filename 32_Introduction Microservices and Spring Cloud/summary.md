@@ -304,14 +304,14 @@ Pada task ini, mengimplementasikan rancangan diagram
 
 output:
 
-![Problem 1](./screenshots/1.PNG)
+![Problem 1](./screenshots/1.png)
 
 ### 2. Problem 2 - Services Communication
 Pada task ini, mengimplementasikan rancangan dengan Rest
 
 output:
 
-![Problem 2](./screenshots/1.PNG)
+![Problem 2](./screenshots/1.png)
 
 
 
